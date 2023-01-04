@@ -1,15 +1,13 @@
-# (En) My course works, which may be useful to me and you in the future.
+# Инвестиционный портфель (Android/Kotlin, курсовая 4-ого семестра не для себя)
 
-You can choose a project in a branch selection. Unfortunately, many of them are only available in Russian, but can easily be translated.
+Программа предоставляет возможность создавать портфели и добавлять в них акции. Использует Jetpack Compose (Material You), БД Room, API Finnhub (ключ не затирал для гитхаба, приложение можно собрать с ним), языки Ru/En, вроде как должна работать автосинхронизация при изменении котировок.
 
-Since these are training projects, many of them can be done hastily due to deadlines, have poor architecture due to conflicting requirements or lack of knowledge.
+Написано за 7 дней. Содержит баги, написано без архитектурных знаний платформы и Compose'а.
 
-The projects are provided "as is" under the MIT licence, except for those projects which require a different license due to the technology used (e.g. [Qt5 for Open Source](https://www.qt.io/download-open-source#:~:text=any%20of%20the%20following%20licenses%3A%20LGPL%20version%203%2C%20GPL%20version%202%20and%20GPL%20version%203)).
+![Выбор портфелей](screenshot1.jpg)
 
-# (Ru) Мои курсовые работы, которые могут пригодиться мне и вам в будущем.
+![Просмотр и изменение портфеля](screenshot2.jpg)
 
-Вы можете выбрать проект в выборе веток. Многие из них доступны только на русском.
+![Переименование портфеля](screenshot3.jpg)
 
-Поскольку это учебные проекты, многие из них могут быть сделаны на скорую руку из-за дедлайнов, иметь плохую архитектуру из-за противоречивых требований или недостатка знаний.
-
-Проекты предоставлены "как есть" под лицензией MIT, не считая тех проектов, которые в связи с использованными технологиями (например [Qt5 for Open Source](https://www.qt.io/download-open-source#:~:text=any%20of%20the%20following%20licenses%3A%20LGPL%20version%203%2C%20GPL%20version%202%20and%20GPL%20version%203)) требуют использования иной лицензии.
+![Выбор акции при поиске](screenshot4.jpg)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Инвестиционный портфель</string>
+    <string name="all_portfolios">Все портфели</string>
+    <string name="add_portfolio">Добавить портфель</string>
+    <string name="no_portfolios">Ни одного портфеля ещё не создано</string>
+    <string name="db_error">Ошибка подключения к базе данных!</string>
+    <string name="stock_search">Поиск акций</string>
+    <string name="delete_portfolio">Удалить</string>
+    <string name="rename_portfolio">Переименовать</string>
+    <string name="name">Название</string>
+    <string name="save_name">Сохранить название</string>
+    <string name="cancel">Отменить</string>
+    <string name="no_stocks">Ни одной акции ещё не добавлено</string>
+    <string name="search_suggestion">Название или тикер</string>
+    <string name="unknown_country">неизвестная страна</string>
+    <string name="clear_text">Очистить текст</string>
+    <string name="buy">куплено</string>
+    <string name="buy2">на цену</string>
+    <string name="plus">Увеличить на 1</string>
+    <string name="minus">Уменьшить на 1</string>
+    <string name="delete">Удалить</string>
+</resources>
