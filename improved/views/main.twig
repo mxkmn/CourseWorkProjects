@@ -1,0 +1,125 @@
+{% from "macros.twig" import btn %}
+
+{% extends "layout.twig" %}
+
+{% block extensions %}
+<link href="/styles/gallery.css" rel="stylesheet" type="text/css" media="all">
+{% endblock %}
+
+{% block content %}
+{% if id %}
+<div class="pic_container">
+	<img src="/pics/artist/{{id}}.jpg" />
+</div>
+<div class="center">
+	{{ btn("Изменение", "/modify_artist/" ~ id, true, "warning") }}
+	{{ btn("Удалить", "?type=" ~ id ~ "&delete=true", "danger") }}
+</div>
+{% endif %}
+
+<h1>{{ caption }}</h1>
+
+<div class="menu-list">
+	{% for item in content %}
+		<div class="menu-item">
+			<div class="menu-row">
+				<form action = "/album/{{ item.id }}">
+					<button type="submit" class="btn btn-warning">
+						{{ item.name }}
+					</button>
+				</form>
+
+				<form action = "/album/{{ item.id }}/update">
+					<button type="submit" class="btn btn-warning">
+						<i class="fas fa-pen"></i>
+					</button>
+				</form>
+
+				<form action="/delete" method="POST">
+					<input type="hidden" name="id" value="{{ item.id }}">
+					<button type="submit" class="btn btn-danger">
+						<i class="fas fa-trash"></i>
+					</button>
+				</form>
+			</div>
+
+			<img src="/pics/album/{{ item.id }}.jpg" class="fill-max-size" alt="Обложка" />
+
+			<span>{{ btn("Описание", "/album/" ~ item.id ~ "?type=info", true) }} {{ btn("Обложка", "/album/" ~ item.id ~ "?type=image", true) }}</span>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}
+{#
+<div class="container mt-5">
+{% for object in album %}
+    <div class="item position-relative">
+    <div class="position-absolute" style=" right: 50px; top: 10px" >
+        <form action = "/album/{{ object.id }}/update" method="POST">
+        <input type="hidden" name="id" value="{{object.id}}">
+          <button type="submit" class="btn btn-warning">
+            <i class="fas fa-pen"></i>
+          </button>
+        </form>
+    </div>
+    <div class="position-absolute" style="right:10px; top: 10px;">
+        <form action="/delete" method="POST">
+            <input type="hidden" name="id" value="{{ object.id }}">
+            <button type="submit" class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+            </button>
+        </form>
+    </div>
+        <img src="{{ object.image }}" style="width:300px; height: 150px; object-fit: cover; border: 1px solid grey; border-radius: 5px;" alt="">
+
+        <div class="block">
+            <div class="mt-2">
+                <button type="button" class="btn btn-primary">
+                <a class="nav-link active" href="/album/{{ object.id }}"><strong>{{ object.title }}</strong></a>
+                </button>
+            </div>
+
+            <div class="mt-2">
+                <a class="btn btn-dark me-3" href="/album/{{ object.id }}?show=info"><strong>Описание</strong></a>
+                <a class="btn btn-dark" href="/album/{{ object.id }}?show=image" ><strong>Картинка</strong></a>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+</div>
+
+<style>
+    .container {
+        display: flex;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        padding: 10px;
+        margin: 10px;
+        justify-items: center;
+        border-radius: 35px;
+        border: 1px solid grey;
+    }
+
+    .block{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .block>div{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .block>div:first-child{
+        justify-content: center;
+    }
+
+</style>
+
+{% endblock %} #}

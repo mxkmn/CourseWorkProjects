@@ -1,0 +1,31 @@
+{% macro btn(name, url, is_enabled, type) %}
+	{% if is_enabled == false %}
+		<a href="{{ url }}" class="btn btn-link">{{ name }}</a>
+	{% elseif (type is null or type == "") %}
+		<a href="{{ url }}" class="btn btn-primary">{{ name }}</a>
+	{% else %}
+		<a href="{{ url }}" class="btn btn-{{ type }}">{{ name }}</a>
+	{% endif %}
+{% endmacro %}
+
+{% macro btn_script(name, onclick, type) %}
+	{% if (type is null or type == "") %}
+		<a onclick="{{onclick}}", class="btn btn-primary">{{ name }}</a>
+	{% else %}
+		<a onclick="{{onclick}}" class="btn btn-{{ type }}">{{ name }}</a>
+	{% endif %}
+{% endmacro %}
+
+{# {% macro gallery(albums) %}
+	<div class="menu-list">
+		{% for album in albums %}
+			<div class="menu-album">
+				{{ btn( album.name, "/album/" ~ album.id, true, "warning") }}
+
+				<img src="/pics/album/{{ album.id }}.jpg" class="fill-max-size" alt="Обложка" />
+
+				<span>{{ btn("Описание", "/album/" ~ album.id ~ "?type=desc", true) }} {{ btn("Обложка", "/album/" ~ album.id ~ "?type=cover", true) }}</span>
+			</div>
+		{% endfor %}
+	</div>
+{% endmacro %} #}

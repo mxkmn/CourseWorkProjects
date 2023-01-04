@@ -1,0 +1,12 @@
+{% extends "layout.twig" %}
+
+{% block extensions %}
+<link href="/styles/page404.css" rel="stylesheet" type="text/css" media="all">
+{% endblock %}
+
+{% block content %}
+<div id="page404-wrap">
+	<h1>Такой страницы не существует</h1>
+	<button onclick="window.location = '/';">На главную</button>
+</div>
+{% endblock %}

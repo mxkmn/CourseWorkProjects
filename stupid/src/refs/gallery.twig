@@ -1,0 +1,45 @@
+{% from "macros.twig" import btn %}
+{% from "macros.twig" import btn_script %}
+
+{% extends "layout.twig" %}
+
+{% block extensions %}
+<link href="/styles/gallery.css" rel="stylesheet" type="text/css" media="all">
+
+{% if is_editable %}<script>
+	function ddelete() {
+		if (confirm("Точно удалить?")) {
+			location.href='?type=delete_artist';
+		}
+	}
+</script>{% endif %}
+{% endblock %}
+
+{% block content %}
+<h1>{{ caption }}</h1>
+
+{% if is_editable %}
+<div class="center">
+	{{ btn("Изменение", "?type=update", type == 'update') }}
+	{{ btn_script("Удалить", "ddelete()", "danger") }}
+</div>
+{% endif %}
+
+{% if picture %}
+<div class="pic_container">
+	<img src={{picture}} />
+</div>
+{% endif %}
+
+<div class="menu-list">
+	{% for item in content %}
+		<div class="menu-item">
+			{{ btn( item.name, "/album/" ~ item.id, true, "warning") }}
+
+			<img src="/pics/album/{{ item.id }}.jpg" class="fill-max-size" alt="Обложка" />
+
+			<span>{{ btn("Описание", "/album/" ~ item.id ~ "?type=desc", true) }} {{ btn("Обложка", "/album/" ~ item.id ~ "?type=cover", true) }}</span>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}

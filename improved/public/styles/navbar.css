@@ -1,0 +1,29 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    height: 6em;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: gray;
+}
+
+.nav {
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    align-self: center;
+    margin: 10px;
+}
+
+.nav-icon {
+    font-size: 200%;
+}
+
+.nav-name {
+    font-size: 150%;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+}

@@ -1,0 +1,35 @@
+{% extends "album.twig" %}
+
+{% set type = 'update' %}
+
+{% block additional %}
+<form action="" enctype="multipart/form-data" method="POST" class="row g-3">
+	<div class="col-4">
+		<label class="form-label">Исполнитель
+		<select class="form-select" name="artist">
+			{% for artist in artists %}
+				<option value="{{ artist.id }}" {% if artist.id == album.artist_id %} selected {% endif %}>{{ artist.name }}</option>
+			{% endfor %}
+		</select>
+  </div>
+	<div class="col-4">
+		<label class="form-label">Название</label>
+		<input required type="text" class="form-control" name="name" value="{{ album.name }}">
+	</div>
+	<div class="col-2">
+		<label class="form-label">Год</label>
+		<input type="number" name="year" value="{{ album.year }}" min="0" max="2023" step="1" class="form-control"></label>
+	</div>
+	<div class="col-2">
+		<label class="form-label">Рейтинг</label>
+		<input type="number" name="rating" value="{{ album.rating }}" min="0.1" max="5.0" step="0.1" class="form-control"></label>
+	</div>
+	<div class="col-12">
+		<label for="cover" class="form-label">Обложка (останется прошлой, если не будет выбрана)</label>
+		<input class="form-control" type="file" id="cover" name="cover">
+	</div>
+	<div class="col-12 text-end">
+		<button type="submit" class="btn btn-primary">Изменить</button>
+	</div>
+</form>
+{% endblock %}

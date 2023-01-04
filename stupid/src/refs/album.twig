@@ -1,0 +1,39 @@
+{% from "macros.twig" import btn %}
+{% from "macros.twig" import btn_script %}
+
+{% extends "layout.twig" %}
+
+{% block extensions %}
+<link href="/styles/info.css" rel="stylesheet" type="text/css" media="all">
+<script>
+	function ddelete() {
+		if (confirm("Точно удалить?")) {
+			{% if is_last %}
+				if (confirm("Вы удаляете единственный альбом этой группы. Удалить исполнителя?")) {
+					location.href='?type=delete_album_and_artist';
+				} else {
+					location.href='?type=delete_album';
+				}
+			{% else %}
+				location.href='?type=delete_album';
+			{% endif %}
+		}
+	}
+</script>
+{% endblock %}
+
+{% block content %}
+<h1>{{name}}</h1>
+
+<div class="additionals">
+	<div class="additional-left">
+		{% block additional %}{% endblock %}
+	</div>
+	<div class="additional-right">
+		{{ btn("Описание", "?type=desc", type == 'desc', "warning") }}
+		{{ btn("Обложка", "?type=cover", type == 'cover', "warning") }}
+		{{ btn("Изменение", "?type=update", type == 'update') }}
+		{{ btn_script("Удалить", "ddelete()", "danger") }}
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "album.twig" %}
+
+{% set type = 'cover' %}
+
+{% block additional %}
+<img src="/pics/album/{{album.id}}.jpg" />
+{% endblock %}

@@ -1,0 +1,14 @@
+#page404-wrap > button {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: transparent;
+    outline: none;
+    transition: 0.3s ease-out;
+}
+
+#page404-wrap > button:hover {
+    color: #ffffffbb;
+    background-color: black;
+}

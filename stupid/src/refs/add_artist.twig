@@ -1,0 +1,34 @@
+{% from "macros.twig" import btn %}
+
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<h1>Добавление исполнителя</h1>
+
+<hr>
+
+{% if artist_id %}
+<div class="alert alert-info">
+	Вы успешно добавили исполнителя. <a href="/artist/{{artist_id}}">Нажмите, чтобы посмотреть</a>
+</div>
+{% endif %}
+
+<form action="" enctype="multipart/form-data" method="POST" class="row g-3">
+	<div class="col-6">
+		<label class="form-label">Название</label>
+		<input required type="text" class="form-control" name="name">
+	</div>
+	<div class="col-6">
+		<label for="cover" class="form-label">Обложка</label>
+		<input required class="form-control" type="file" id="cover" name="cover">
+	</div>
+	<div class="col-6">
+		<a href="/add_album" class="btn btn-warning">Добавление альбома</a>
+	</div>
+	<div class="col-6 text-end">
+		<button type="submit" class="btn btn-primary">Добавить</button>
+	</div>
+</form>
+
+{% endblock %}

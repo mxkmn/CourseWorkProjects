@@ -1,0 +1,10 @@
+<nav>
+	<div class="nav nav-icon"><a href="/">
+		<i class="fa-regular fa-house-blank" alt="{{ nav_item.name }}" title="{{ nav_item.name }}"></i>
+	</a></div>
+	{% for nav_item in artists %}
+		<div class="nav nav-name"><a href="/artist/{{ nav_item.id }}">{{ nav_item.name }}</a></div>
+	{% endfor %}
+	<div class="nav nav-name"><a href="/search">Поиск</a></div>
+	<div class="nav nav-name"><a href="/add_album">Добавить</a></div>
+</nav>

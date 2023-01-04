@@ -1,0 +1,70 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+	{% if name_album %}
+		<div class="alert alert-info">
+			Альбом {{name_album}} добавлен! <a href="/album/{{id}}">Нажмите, чтобы посмотреть</a>
+		</div>
+	{% endif %}
+
+	{% if name_artist %}
+		<div class="alert alert-info">
+			Исполнитель {{name_artist}} добавлен! <a href="/?type={{id}}">Нажмите, чтобы посмотреть</a>
+		</div>
+	{% endif %}
+
+	<div class="ml-5 container">
+
+		<h2>Добавление альбома</h2>
+		<hr>
+
+		<form action="" enctype="multipart/form-data" method="POST" class="row g-3">
+			<div class="col-4">
+				<label class="form-label">Исполнитель
+				<select class="form-select" name="artist_id">
+					{% for artist in artists %}
+						<option value="{{ artist.id }}">{{ artist.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="col-4">
+				<label class="form-label">Название</label>
+				<input required type="text" class="form-control" name="name">
+			</div>
+			<div class="col-2">
+				<label class="form-label">Год</label>
+				<input type="number" name="year" value="2022" min="0" max="2023" step="1" class="form-control"></label>
+			</div>
+			<div class="col-2">
+				<label class="form-label">Рейтинг</label>
+				<input type="number" name="rating" value="4" min="0.1" max="5.0" step="0.1" class="form-control"></label>
+			</div>
+			<div class="col-12">
+				<label for="cover" class="form-label">Обложка</label>
+				<input required class="form-control" type="file" id="cover" name="cover">
+			</div>
+			<div class="col-12 text-end">
+				<button type="submit" name="album" value="album" class="btn btn-primary">Добавить</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="ml-5 container">
+		<h2>Добавление исполнителя</h2>
+		<hr>
+
+		<form action="" enctype="multipart/form-data" method="POST" class="row g-3">
+			<div class="col-6">
+				<label class="form-label">Название</label>
+				<input required type="text" class="form-control" name="name">
+			</div>
+			<div class="col-6">
+				<label for="cover" class="form-label">Фотография</label>
+				<input required class="form-control" type="file" id="photo" name="photo">
+			</div>
+			<div class="col-12 text-end">
+				<button type="submit" name="artist" value="artist" class="btn btn-primary">Добавить</button>
+			</div>
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "album.twig" %}
+
+{% set type = 'desc' %}
+
+{% block additional %}
+<ul class="description">
+	{% for params_item in description %}
+	<li>
+		<span class="fa-regular {{ params_item.icon }}"></span>
+		<span>{{ params_item.value }}</span>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}

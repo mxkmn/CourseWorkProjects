@@ -1,15 +1,13 @@
-# (En) My course works, which may be useful to me and you in the future.
+# Работа с бекендом
 
-You can choose a project in a branch selection. Unfortunately, many of them are only available in Russian, but can easily be translated.
+Достаточно объёмный CRUD по [заданиям 4-6](https://outer.tealeaf.su/), тема - исполнители и их альбомы. **Improved** версия является просто переделанным под себя проектом с сайта, а **stupid** - то, как пытался переделать сам (ибо не всё кажется нужным при последовательном копипастинге), и что в итоге начало потихоньку разваливаться.
 
-Since these are training projects, many of them can be done hastily due to deadlines, have poor architecture due to conflicting requirements or lack of knowledge.
+Некоторые требования весьма бессмысленны, например вывод информации на трёх разных формах. Для чего-то более менее реального требуется немного допилить.
 
-The projects are provided "as is" under the MIT licence, except for those projects which require a different license due to the technology used (e.g. [Qt5 for Open Source](https://www.qt.io/download-open-source#:~:text=any%20of%20the%20following%20licenses%3A%20LGPL%20version%203%2C%20GPL%20version%202%20and%20GPL%20version%203)).
+Проекты открываются через laragon. Можно восстановить бекап БД (название `outer_space`, кодировка `utf8mb4_unicode_ci`) из приложенного файла. Картинки в репозитории намеренно заменены шаблонными, фиксится заменой.
 
-# (Ru) Мои курсовые работы, которые могут пригодиться мне и вам в будущем.
+![Главная страница](screenshot1.png)
 
-Вы можете выбрать проект в выборе веток. Многие из них доступны только на русском.
+![Страница исполнителя](screenshot2.png)
 
-Поскольку это учебные проекты, многие из них могут быть сделаны на скорую руку из-за дедлайнов, иметь плохую архитектуру из-за противоречивых требований или недостатка знаний.
-
-Проекты предоставлены "как есть" под лицензией MIT, не считая тех проектов, которые в связи с использованными технологиями (например [Qt5 for Open Source](https://www.qt.io/download-open-source#:~:text=any%20of%20the%20following%20licenses%3A%20LGPL%20version%203%2C%20GPL%20version%202%20and%20GPL%20version%203)) требуют использования иной лицензии.
+![Страница добавления](screenshot3.png)

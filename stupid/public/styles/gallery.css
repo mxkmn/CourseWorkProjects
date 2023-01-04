@@ -1,0 +1,41 @@
+.menu-list {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0px auto;
+	text-align: center;
+	align-content: space-between;
+	justify-content: space-between;
+}
+
+.menu-list a {
+	font-size: 115%;
+	margin: 8px auto;
+}
+
+.menu-item {
+	display: flex;
+	flex-direction: column;
+	margin: 0px auto;
+	text-align: center;
+	margin: 15px;
+	width: 220px;
+}
+
+.menu-item img {
+	border-radius: 5px;
+}
+
+.center {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0px auto;
+	text-align: center;
+	align-content: space-around;
+	justify-content: space-around;
+}
+
+.pic_container {
+	width: 30%;
+	margin: 0px auto;
+	padding: 10px;
+}

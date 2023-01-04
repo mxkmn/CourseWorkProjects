@@ -1,0 +1,12 @@
+.additionals {
+    display: flex;
+    justify-content: space-around;
+}
+
+.additional-left, .additional-right {
+    padding: 15px;
+}
+
+.description {
+    list-style: none;
+}

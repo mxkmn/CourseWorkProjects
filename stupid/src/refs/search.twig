@@ -1,0 +1,49 @@
+{% from "macros.twig" import btn %}
+
+{% extends "layout.twig" %}
+
+{% block extensions %}
+<link href="/styles/gallery.css" rel="stylesheet" type="text/css" media="all">
+{% endblock %}
+
+{% block content %}
+<h1>Поиск</h1>
+
+<form action="" class="row">
+	<div class="col-3">
+		<label class="form-label">Исполнитель
+		<select name="artist" class="form-select">
+				<option value="all">Любой</option>
+			{% for artist in artists %}
+				<option value="{{ artist.id }}" {% if artist.id == get_artist %} selected {% endif %} >{{ artist.name }}</option>
+			{% endfor %}
+		</select>
+  </div>
+
+	<div class="col-3">
+		<label class="form-label">Название
+		<input type="text" name="name" class="form-control" value="{{ get_name }}"></label>
+  </div>
+
+	<div class="col-3">
+		<label class="form-label">Мин. рейтинг
+		<input type="number" name="min_rating" value="{{ get_min_rating }}" min="0.1" max="5.0" step="0.1" class="form-control"></label>
+  </div>
+	<div class="col-3">
+		<button type="submit" class="btn btn-primary">Найти</button>
+  </div>
+</form>
+
+<div class="menu-list">
+	{% for item in search_result %}
+		<div class="menu-item">
+			{{ btn( item.name, "/album/" ~ item.id, true, "warning") }}
+
+			<img src="/pics/album/{{ item.id }}.jpg" class="fill-max-size" alt="Обложка" />
+
+			<span>{{ btn("Описание", "/album/" ~ item.id ~ "?type=desc", true) }} {{ btn("Обложка", "/album/" ~ item.id ~ "?type=cover", true) }}</span>
+		</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
